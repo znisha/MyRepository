@@ -53,11 +53,67 @@
 		</dependency>
 	</dependencies>
 
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.jenkins-ci.plugins</groupId>
+		<artifactId>plugin</artifactId>
+		<version>4.51</version>
+		<relativePath />
+	</parent>
+
+	<name>Template Workflows</name>
+	<groupId>org.jenkins.plugin.templateWorkflows</groupId>
+	<artifactId>template-workflows</artifactId>
+	<version>${changelist}</version>
+	<packaging>hpi</packaging>
+	<url>https://wiki.jenkins-ci.org/display/JENKINS/Template+Workflows+Plugin</url>
+
+	<scm>
+		<connection>scm:git:https://git@github.com/jenkinsci/template-workflows-plugin.git</connection>
+		<developerConnection>csm:git:ssh://git@github.com/jenkinsci/template-workflows-plugin.git</developerConnection>
+		<url>https://github.com/jenkinsci/template-workflows-plugin.git</url>
+		<tag>${scmTag}</tag>
+	</scm>
+	<repositories>
+		<repository>
+			<id>repo.jenkins-ci.org</id>
+			<url>https://repo.jenkins-ci.org/public/</url>
+		</repository>
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>repo.jenkins-ci.org</id>
+			<url>https://repo.jenkins-ci.org/public/</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.jenkins.tools.bom</groupId>
+                <artifactId>bom-2.346.x</artifactId>
+                <version>1723.vcb_9fee52c9fc</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>io.jenkins.plugins</groupId>
+			<artifactId>ionicons-api</artifactId>
+		</dependency>
+	</dependencies>
+
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.release>8</maven.compiler.release>
-		<maven.compiler.source>8</maven.compiler.source>
-		<maven.compiler.target>8</maven.compiler.target>
+		<jenkins.version>2.346.1</jenkins.version>
+		<spotbugs.threshold>High</spotbugs.threshold>
+		<changelist>999999-SNAPSHOT</changelist>
 	</properties>
+
+</project>
 
 </project>
